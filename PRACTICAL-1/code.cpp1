@@ -1,0 +1,77 @@
+Program-1
+Program to Implement Linear Search Method and also find Total
+no of comparisons .
+Problem Statement:
+Given an array of non negative integers ,design a linear algorithm and implement it using a program
+to find whether given key element is present in the array or not.Also find total number of comparisons 
+for each input case .(Time  complexity =O(n),where n is the size of inputs ) 
+
+Algorithm :
+(For single test case)
+START
+Read k  //k=key
+f=0     //Flag to check presence of key
+c=0     //c=no of comparisons
+or i=0 to n
+{
+no_of_comparisons++
+if(a[i]==k)
+Print "Present"
+Print c
+F=1
+break
+}
+if (i==n)
+{
+Print "NOT Present"
+Print c
+}
+STOP
+
+Complexity Analysis
+
+Time complexity:
+Worst case:When key is last element of index or not present in the array.
+T(n)=(n)[Linear]
+
+Best Case:When element is present at first index.
+T(n)=(1)[constant]
+
+Average Case:When element is present in between first and last index somewhere in middle.
+T(n)=T(n/2)=T(n)[Linear]
+Space complexity:
+Worst case=average case=best case.
+
+SOURCE CODE:
+#include<iostream>
+using namespace std;
+
+int main()
+{
+int n,t,k;
+cout<<"Enter the number of test cases ";
+cin>>t;
+while(t)
+{
+int a[n];
+cout<<" Enter the Array: "<<endl;
+for(int i=0;i<n;i++)
+cin>>a[i];
+
+cout<<"Enter the key to be searched"<<endl;
+cin>>k;
+
+for(int i=0;i<n;i++)
+{
+c++;
+if(a[i]==k)
+{
+f=1;
+cout<<"Present :No of comparisons "<<c<<endl;
+break;
+}
+}t--;
+if(f==0)
+cout<<"Not Present :No of comparisons"<<c<<endl;
+}
+return 0;}
